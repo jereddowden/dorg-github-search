@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h4 *ngIf="type !== 'starred'; else starredHeader">Repositories</h4>
+    <ng-template #starredHeader>
+      <h4>Starred</h4>
+    </ng-template>
+  </div>
+  <div class="card-body">
+    <div *ngFor="let repo of repos">
+      <a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a><br />
+      <span class="badge badge-success">{{repo.watchers}} Watching</span> &nbsp;
+      <span class="badge badge-light">{{repo.forks}} Forks</span>
+      <p>{{repo.description}}</p>
+      <hr>
+    </div>
+  </div>
+</div>

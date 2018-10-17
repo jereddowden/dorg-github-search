@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header">
+    <h4 *ngIf="user.name || user.login">
+      {{user.name || user.login}}
+    </h4>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4">
+        <img class="img-thumbnail" src="{{user.avatar_url}}" alt="Card image cap"><br>
+      </div>
+      <div class="col-md-8">
+        <ul>
+          <li *ngIf="user.login" class="list-group-item"><strong>Username:</strong> {{user.login}}</li>
+          <li *ngIf="user.location" class="list-group-item"><strong>Location:</strong> {{user.location}}</li>
+          <li *ngIf="user.email" class="list-group-item"><strong>Email:</strong> {{user.email}}</li>
+          <li *ngIf="user.blog" class="list-group-item"><a href="{{user.blog}}" target="_blank">{{user.blog}}</a></li>
+          <li *ngIf="user.created_at" class="list-group-item"><strong>Account Created:</strong> {{user.created_at
+            |
+            date}}</li>
+          <li *ngIf="user.followers || user.following" class="list-group-item">
+            <span *ngIf="user.followers" class="badge badge-success">{{user.followers}} Followers</span>&nbsp;
+            <span *ngIf="user.following" class="badge badge-info">{{user.following}} Following</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="{{user.html_url}}" target="_blank" class="btn btn-block">View Profile</a>
+  </div>
+</div>
