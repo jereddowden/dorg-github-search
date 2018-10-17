@@ -1,0 +1,23 @@
+<div class="form-inline my-4 text-center">
+  <div class="form-group mx-sm-3 ">
+    <input #username class="form-control" type="text" (keydown.enter)="searchGithub(username.value)" placeholder="Enter a Username" />
+  </div>
+  <button type="button" class="btn btn-primary" (click)="searchGithub(username.value)">Search</button>
+</div>
+
+<div class="alert alert-danger" role="alert" *ngIf="error">{{error}}</div>
+
+<ng-container *ngIf="user">
+  <app-tabs>
+    <app-tab tabTitle="Profile">
+      <app-profile [user]="user"></app-profile>
+    </app-tab>
+    <app-tab *ngIf="repos" tabTitle="Repositories">
+      <app-repos [repos]="repos">
+      </app-repos>
+    </app-tab>
+    <app-tab *ngIf="starred" tabTitle="Starred Repositories">
+      <app-repos [repos]="starred" type="starred"></app-repos>
+    </app-tab>
+  </app-tabs>
+</ng-container>
