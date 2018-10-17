@@ -11,10 +11,11 @@ Utilizing the [GitHub REST API](https://developer.github.com/v3/), create a web 
 ## Running the project
 * Clone the repo ``git clone git@github.com:jereddowden/dorg-github-search.git``
 * CD into the directory ``cd dorg-github-search``
-* Install dependencies with npm ``npm i``
+* Install dependencies with [npm](https://nodejs.org) ``npm i``
 * Serve the app using ``ng serve``
-* Run unit tests using ``ng test``
+* Run unit tests on [http://localhost:9876](http://localhost:9876) using ``ng test``
     * If you experience issues with the above command(s), install Angular CLI ``npm i @angular/cli``
+* The app should now be running on [http://localhost:4200](http://localhost:4200)
 
 ## Development server
 
