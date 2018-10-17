@@ -1,12 +1,24 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { SearchComponent } from './search/search.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ReposComponent } from './repos/repos.component';
+import { TabsComponent } from './tabs/tabs.component';
+import { TabComponent } from './tabs/tab.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        SearchComponent,
+        ProfileComponent,
+        ReposComponent,
+        TabsComponent,
+        TabComponent
       ],
+      imports: [HttpClientTestingModule]
     }).compileComponents();
   }));
 
@@ -14,18 +26,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'dorg-github-search'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('dorg-github-search');
-  });
-
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to dorg-github-search!');
   });
 });
